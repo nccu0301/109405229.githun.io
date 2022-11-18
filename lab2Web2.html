@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type= "text/css">
+body{
+	background: rgb(238,174,202);
+	background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+	font-family:Courier New,Comic Sans MS,Georgia;
+}
+h3{
+	color:#926a2d;
+	font-family:Courier New,Comic Sans MS,Georgia;
+	
+}
+h3 em{
+	
+	color:#eeba30;
+}
+question{
+	color:green;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.extra question{
+	color:yellow;
+	font-style: inherit;
+	font-weight: inherit;
+}
+
+</style>
+	<title>Practice</title>
+</head>
+<body>
+	<h1>Challenge For You!</h1>
+	Please fill out this form to complete the challenge.
+	<form>
+		<p>	
+			<h3>Part One — Basic Info</h3>	
+		</p>
+		
+		<p><label>Name:&ensp;<input type="text" name="name" size="25" max length="30"></label></p>
+		<p>E-mail Address:&ensp;<input type="email" name="eamil" placeholder="name@domain.com" required></p>
+		<p>
+			Age:&ensp;<input type="number" id ="quantity" name="quantity" min="0" max="100" value="21">
+		</p>
+		
+		<div></div>
+		<p>
+			<h3>Part two — Mathematic</h3>	
+		</p>
+		<p>
+			<p>Q1:&ensp;Which of the following are <question>not</question> Prime number ?</p>	
+			<input type="radio" name="path" value="SE">56<br>
+			<input type="radio" name="path" value="Another"  >2<br>
+			<input type="radio" name="path" value="Deitel"  >11<br>
+			<input type="radio" name="path" value="Book"  >13<br>
+			<input type="radio" name="path" value="Other"  >31<br>
+		</p>
+		<p>
+			<p class ="extra">Q2:&ensp;Which of the following output are <question>not</question> odd? </p>	
+			<input type="radio" name="path" value="SE">5+6<br>
+			<input type="radio" name="path" value="Another"  >2+2<br>
+			<input type="radio" name="path" value="Deitel"  >90+11<br>
+			<input type="radio" name="path" value="Book"  >14+13<br>
+			<input type="radio" name="path" value="Other"  >31+0<br>
+		</p>
+		<p>
+			<label for ="range">How content are you with the quiz?&ensp;0</label>
+			<input type="range" id ="vol" name="range" min="0" max="100">100
+		</p>
+		<p>
+			<input type="submit" value="Submit">
+			<input type="reset" value="Clear">
+		</p>
+	</form>
+</body>
+</html>
