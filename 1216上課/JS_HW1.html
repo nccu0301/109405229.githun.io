@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS_HW1</title>
+</head>
+<body>
+	<script>
+		
+		var randInt;
+		var userInput;		
+		randInt=Math.floor((Math.random()*10)+1);
+		//randInt = 1;
+		userInput=parseInt(window.prompt("請輸入一個整數(1~10)"));
+		while(randInt!=userInput){			
+			userInput=parseInt(window.prompt("猜錯了，請繼續猜"));
+		}
+		alert('恭喜答對,答案是'+randInt+"掰掰");
+	</script>
+	
+</body>
+</html>
