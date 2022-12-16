@@ -1,0 +1,118 @@
+/*dropdown*/
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/*nav bar*/
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+nav li a:hover {
+  background-color: #111;
+}
+
+/* end of nav bar*/
+
+content{
+	color:#dcf3ff;
+}
+.extra content{
+	color:inherit;
+	border: 0.7px solid white;
+}
+
+strong{
+		font-weight: bold;
+		color: purple;
+	}	
+body{
+	
+	font-family:  impact,courier,papyrus;
+	color: #CCCCFF ; /*purple*/
+	background-color:  #fdbb2d /*gradiant*/
+	padding: 70px;
+}
+p{
+	color: white;
+	font-family:  courier,impact,papyrus;
+	margin left: 35px;
+}
+p em{
+	
+	text-decoration: underline;
+}
+
+.backgroundImage{
+	background-image:url("bg2.jfif");
+	background-attachment: fixed;
+	position:absolute;
+	z-index: 1;
+
+
+.foregroundImage{
+	background-image:url("bg1.png");
+	background-attachment: fixed;
+	background-repeat:repeat;
+	position:absolute;
+	z-index: 2;
+}
