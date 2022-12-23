@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS_LAB2</title>
+</head>
+<body>
+	<form action="#"> <!--HTML規定每個form都要有action屬性，因為這個form沒有post任何資訊到瀏覽器，所以用"#"來防止出錯-->
+		<input id="rollButton" type="button" value="Roll Dice">
+	</form>
+	<ol>
+		<li><img id ="die1" src="die1.png" alt="blank image"></li>
+		<li><img id ="die2" src="die1.png" alt="blank image"></li>
+		<li><img id ="die3" src="die1.png" alt="blank image"></li>
+		<li><img id ="die4" src="die1.png" alt="blank image"></li>
+		<li><img id ="die5" src="die1.png" alt="blank image"></li>
+		<li><img id ="die6" src="die1.png" alt="blank image"></li>
+		<li><img id ="die7" src="die1.png" alt="blank image"></li>
+		<li><img id ="die8" src="die1.png" alt="blank image"></li>
+		<li><img id ="die9" src="die1.png" alt="blank image"></li>
+		<li><img id ="die10" src="die1.png" alt="blank image"></li>
+		<li><img id ="die11" src="die1.png" alt="blank image"></li>
+		<li><img id ="die12" src="die1.png" alt="blank image"></li>
+	</ol>
+
+	<div id="frquencyTableDiv"></div>
+
+	<script>
+		var face1Sta=0; 
+		var face2Sta=0; 
+		var face3Sta=0; 
+		var face4Sta=0;
+		var face5Sta=0;
+		var face6Sta=0;//老師用frequencyn
+		var totalDice=0;
+
+		function start()
+		{
+			var button =document.getElementById("rollButton");
+			button.addEventListener("click",rollDice,false);//原本有false
+		}
+
+		//改變圖片=擲骰子的意思
+		function rollDice()
+		{
+			var face;
+			for (var i=1; i<=12;++i)
+			{
+				face=Math.floor(1+Math.random()*6);
+				setImage(i,face);
+				tallyRolls(face);
+				++totalDice;
+			}
+			updateFrequencyTable();
+		}
+
+		function setImage(dieNumber,face)
+		{
+			var dieImg=document.getElementById("die"+dieNumber);
+			dieImg.setAttribute("src","die"+face+".png"); //改變屬性
+			dieImg.setAttribute("alt","die image with "+face+ "spot(s)");
+		}
+
+		function tallyRolls(face)
+		{
+			switch(face)
+			{
+				case 1:++face1Sta;break;
+				case 2:++face2Sta;break;
+				case 3:++face3Sta;break;
+				case 4:++face4Sta;break;
+				case 5:++face5Sta;break;
+				case 6:++face6Sta;break;
+			}
+		}
+
+		function updateFrequencyTable()
+		{
+			var tableDiv=document.getElementById("frquencyTableDiv");
+			tableDiv.innerHTML="<table>"+
+								"<caption>Die Rolling Frequencies</caption>"+"<thead><th>Face</th><th>Frequency</th>"+"<th>Percent</th></thead>"+
+								"<tbody><tr> <td>1</td><td>"+face1Sta+"</td> <td>"+Math.floor((face1Sta/totalDice)*100)+"%"+"</td> </tr>"+
+								"<tr> <td>2</td><td>"+face2Sta+"</td> <td>"+Math.floor((face2Sta/totalDice)*100)+"%"+"</td> </tr>"+
+								"<tr> <td>3</td><td>"+face3Sta+"</td> <td>"+Math.floor((face3Sta/totalDice)*100)+"%"+"</td> </tr>"+
+								"<tr> <td>4</td><td>"+face4Sta+"</td> <td>"+Math.floor((face4Sta/totalDice)*100)+"%"+"</td> </tr>"+
+								"<tr> <td>2</td><td>"+face5Sta+"</td> <td>"+Math.floor((face5Sta/totalDice)*100)+"%"+"</td> </tr>"+
+								"<tr> <td>2</td><td>"+face6Sta+"</td> <td>"+Math.floor((face6Sta/totalDice)*100)+"%"+"</td> </tr>"+"</tbody></table>";
+
+		}
+
+		window.addEventListener("load",start,false);//原本有false //只要網頁有load就會call start method 
+	</script>
+
+	
+</body>
+</html>
