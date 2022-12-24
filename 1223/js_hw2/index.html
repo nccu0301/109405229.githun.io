@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>JS Calculator</h1>
+	<form>
+	<p>Number 1</p>
+	<p><input type="number" id="num1" class="input_box" size="25" max length="30"></p>
+	<p>Number 2</p>
+	<p><input type="number" id="num2" class="input_box" size="25" max length="30"></p>
+	<p>Operate Way?</p>
+	<select id="operate" name = "sign">
+		<option  value="0" selected >+ </option>
+		<option  value="1"  >-</option>
+		<option  value="2">*</option>
+		<option value="3">/</option>
+	</select>
+	</form>
+	<p>
+		<input id="rollButton" type="button" value="Add" onclick="calculator()">
+	</p>
+	<div>
+		Result:<span id="result"></span>
+	</div>
+
+	<script>
+		function calculator(){
+			var num1=parseInt(document.getElementById('num1').value); 
+			var num2=parseInt(document.getElementById('num2').value);
+			var operator=parseInt(document.getElementById('operate').value);
+			if (operator==0){
+				document.getElementById('result').innerHTML=plus(num1,num2);
+			}
+			else if(operator==1){
+				document.getElementById('result').innerHTML=minus(num1,num2);				
+			}
+			else if(operator==2){
+				document.getElementById('result').innerHTML=add(num1,num2);					
+			}
+			else{
+				document.getElementById('result').innerHTML=divide(num1,num2);					
+			}
+		}
+
+		function plus(num1,num2)
+		{
+			return num1+num2;
+		}
+		function minus(num1,num2)
+		{
+			return num1-num2;
+		}
+		function add(num1,num2)
+		{
+			return num1*num2;
+		}						
+		function divide(num1,num2)
+		{
+			return num1%num2;
+		}
+
+	</script>
+
+	
+</body>
+</html>
