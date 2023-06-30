@@ -1,0 +1,22 @@
+body {
+ 	background-image: url("Frutiger AeroBG1.jfif");
+ 	background-repeat: no-repeat;
+ 	background-size: cover;
+ 	font-family: 'DFKai-sb';
+	font-style: normal;
+}
+
+.title{
+	font-style: italic;
+	font-size: 98px;
+ }
+
+
+/* 水平置中 */
+.section-flex {
+  display: flex;
+  justify-content: center;
+}
+.section-block {
+  width: 50%;
+  height: 200px;
